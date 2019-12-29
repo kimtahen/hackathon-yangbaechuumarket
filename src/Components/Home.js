@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Typography, Button, IconButton } from '@material-ui/core';
-import Logo1 from './Logo1.png';
+import { AppBar, Toolbar, Typography, Button, IconButton, Container } from '@material-ui/core';
+import Logo from './Logo.png';
+import Banner from '../Banner.png';
 import Post from './Post';
 import Register from './Register';
 import axios from 'axios';
@@ -27,15 +28,17 @@ export default function Home({content, postid, setpostid}){
         },
         title: {
             flexGrow: 1,
+            textAlign: 'center',
+            fontSize: 30,
         },
     }));
     const classes = useStyles();
     return (
         <div className={classes.wrapDiv}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar style={{backgroundColor:`#7db249`}}>
                     <IconButton edge="start" className={classes.logoIcon}>
-                        <img src={Logo1} style={{width: 50, height: 50}} />
+                        <img src={Logo} style={{width: 50, height: 50}} />
                     </IconButton>
                     <Typography variant={"h6"} className={classes.title}>
                     양배추 마켓에 오신 걸 환영합니다.
@@ -43,7 +46,14 @@ export default function Home({content, postid, setpostid}){
                     <Register postid={postid} setpostid={setpostid}/>
                 </Toolbar>
             </AppBar>
-            {openedpost}
+            <Container>
+                <img src={Banner} style={{margin: '50px', width: '90%'}} />
+            </Container>
+            <Container>
+
+                {openedpost}
+
+            </Container>
         </div>
         
     );

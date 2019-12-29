@@ -193,7 +193,7 @@ export default function Register({postid, setpostid}){
                         <p></p>
 
                         <Container>
-                            <RegisterButton variant="contained" onClick={()=>{postpushrequest(title, item, deadline, location, totalEntry, desc, img)}}>신청</RegisterButton>
+                            <RegisterButton variant="contained" onClick={()=>{postpushrequest(title, item, deadline, location, totalEntry, desc, img);handleClose();}}>신청</RegisterButton>
                         </Container>
                     </div>
                 </Fade>
