@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function App() {
     const [contents, setcontent] = useState([]);
+    const [postid, setpostid] = useState(1);
     let postpullrequest = () =>{
         axios.post('http://localhost:8000/pulldata').then((response)=>{setcontent(response);console.log(response)});
 
@@ -19,11 +20,9 @@ function App() {
     useEffect(()=>{
         postpullrequest();
     },[]);
-
-    const [msg, setmsg] = useState(null);
     return (
         <div className="App">
-            <Register/>
+            <Register postid={postid} setpostid={setpostid}/>
         </div>
     );
 }

@@ -52,7 +52,7 @@ const CountTextField = styled(TextField)({
 const RegisterButton = styled(Button)({
 });
 
-export default function Register({}){
+export default function Register({postid, setpostid}){
     const classes = useStyles();
     const classes2 = useStyles2();
     const classes3 = useStyles3();
@@ -110,6 +110,7 @@ export default function Register({}){
     let postpushrequest = (title, item, deadline, location, totalEntry, desc, img) =>{
         axios.post('http://localhost:8000/pushdata',{
             data: {
+                id: `${postid}`,
                 title: `${title}`,
                 item: `${item}`,
                 deadline: `${deadline}`,
@@ -118,7 +119,7 @@ export default function Register({}){
                 desc: `${desc}`,
                 img: `${img}`
             }
-        }).then((response)=>{console.log(response)})
+        }).then((response)=>{setpostid(postid+1); console.log(response)})
     }
     return (
         <div>
