@@ -1,5 +1,6 @@
 import React, {useState,useEffect, useRef} from 'react';
 import Register from './Components/Register';
+import Detail from './Components/Detail';
 import axios from 'axios';
 
 
@@ -23,6 +24,7 @@ function App() {
     return (
         <div className="App">
             <Register postid={postid} setpostid={setpostid}/>
+            <Detail />
         </div>
     );
 }
