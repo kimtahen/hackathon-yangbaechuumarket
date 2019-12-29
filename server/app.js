@@ -24,8 +24,10 @@ app.post('/pulldata',(req,res,err)=>{
         let post = undefined;
         if (posts.length === 0) post = "서버에 저장된 메시지가 없습니다."
         else post = posts;
+        console.log(post)
         res.json(post);
     })
+
 })
 app.post('/pushdata',(req,res,err)=>{
     console.log(req.body.data);

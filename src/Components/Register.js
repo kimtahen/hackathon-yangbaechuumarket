@@ -191,6 +191,7 @@ export default function Register({postid, setpostid}){
                             <RegisterTextField variant="outlined" size="small" onChange={handleOnChangeOfImg} />
                         </RegisterContainer>
                         <p></p>
+
                         <Container>
                             <RegisterButton variant="contained" onClick={()=>{postpushrequest(title, item, deadline, location, totalEntry, desc, img)}}>신청</RegisterButton>
                         </Container>
